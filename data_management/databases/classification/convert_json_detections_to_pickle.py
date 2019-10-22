@@ -2,13 +2,12 @@
 # script ./make_classification_dataset.py
 
 import argparse
-import os
 import json
-import pickle 
-import pandas
+import os
+import pickle
+
 import numpy as np
 import tqdm
-
 
 parser = argparse.ArgumentParser('This file converts the JSON output of the batch processing API to a pickle file, ' + \
                    'which can be used by the script ./make_classification_dataset.py')
@@ -18,8 +17,8 @@ parser.add_argument("--detection_category_whitelist", nargs='+', default=['1'], 
                     help='List of detection categories to use. Default: ["1"]')
 args = parser.parse_args()
 
-assert os.path.isfile(args.input_json), 'ERROR: The input CSV file could not be found!'
-assert not os.path.isfile(args.output_pkl), 'ERROR: The output file exists already!'
+assert os.path.isfile(args.input_json), 'ERROR: The input JSON file could not be found!'
+#assert not os.path.isfile(args.output_pkl), 'ERROR: The output file exists already!'
 assert isinstance(args.detection_category_whitelist, list)
 assert len(args.detection_category_whitelist) > 0
 
@@ -47,8 +46,8 @@ for row in tqdm.tqdm(list(range(len(j['images'])))):
             box = det['bbox']
             boxes.append([box[1], box[0], box[1] + box[3], box[0]+ box[2]])
 
-    detection_dict[key] = dict(detection_scores=conf, detection_boxes=boxes)
-
+    detection_dict[key] = dict(detection_scores=np.array(conf),
+                               detection_boxes=np.array(boxes))
 
 # Write detections to file with pickle
 with open(args.output_pkl, 'wb') as f:
