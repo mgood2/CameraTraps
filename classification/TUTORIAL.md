@@ -198,7 +198,7 @@ In our case, these three values would look like this
     DATASET_NAME=serengeti
     CHECKPOINT_PATH=/data/pretrained/inception_v4.ckpt
 
-You might also want to adjust the number of training steps by changing the value of `--max_number_of_steps` at [line 51](https://github.com/Microsoft/CameraTraps/blob/classification/classification/train_serengeti_inception_v4.sh#L51). A good starting value is 30 epochs, which translates to
+You might also want to adjust the number of training steps by changing the value of `--max_number_of_steps` at [line 51](https://github.com/Microsoft/CameraTraps/blob/classification/classification/training_scripts/train_serengeti_inception_v4.sh#L51). A good starting value is 30 epochs, which translates to
 
     NUM_EPOCHS * NUM_TRAINING_IMAGES / BATCH_SIZE
 
