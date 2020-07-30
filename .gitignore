@@ -38,3 +38,9 @@ api/batch_processing/postprocessing/CameraTrapJsonFileProcessingApp/packages/
 
 # batch processing API config files
 api_config*.py
+
+# copied only for Docker image building
+api/batch_processing/api_core_new/batch_detection_api/aml_scripts/run_tf_detector.py
+api/batch_processing/api_core_new/batch_detection_api/aml_scripts/ct_utils.py
+api/batch_processing/api_core_new/batch_detection_api/aml_scripts/data_management/
+api/batch_processing/api_core_new/batch_detection_api/aml_scripts/visualization/
