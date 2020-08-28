@@ -28,8 +28,11 @@ dependencies:
 #
 # See https://azure.github.io/azure-sdk/releases/latest/
 - pip:        
-  - azure-storage-blob
+  - azure-storage-blob==12.3
   - azure-cosmos
-  - azureml-sdk[tensorboard]==1.0.83
+  - azure-appconfiguration  # used only in batch API currently; installed here for interacting with it
+  - azure-keyvault-secrets
+  - azure.identity
+  - azureml-sdk[tensorboard]==1.10
   - requests-toolbelt  # required to call the sync API
   - locust  # load testing of sync API

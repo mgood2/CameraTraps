@@ -111,11 +111,9 @@ def visualize_detector_output(detector_output_path: str,
     for entry in tqdm(images):
         image_id = entry['file']
 
-        if 'failure' in entry:
+        if 'error' in entry:
             print(f'Skipping {image_id}, failure: "{entry["failure"]}"')
             continue
-
-        # max_conf = entry['max_detection_conf']
 
         if is_azure:
             blob_uri = sas_blob_utils.build_blob_uri(
