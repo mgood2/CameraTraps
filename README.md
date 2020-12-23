@@ -11,7 +11,7 @@ This repo contains the tools for training, running, and evaluating detectors and
 
 Classifiers and detectors are trained using TensorFlow.
 
-This repo is maintained by folks in the [Microsoft AI for Earth](http://aka.ms/aiforearth) program who like looking at pictures of animals.  I mean, we want to use machine learning to support conservation too, but we also really like looking at pictures of animals.
+This repo is maintained by folks in the [HomeStage] program who like looking at pictures of animals.  I mean, we want to use machine learning to support conservation too, but we also really like looking at pictures of animals.
 
 # How we work with ecologists
 
